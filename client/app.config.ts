@@ -1,8 +1,8 @@
 import { ExpoConfig, ConfigContext } from 'expo/config';
 
-const appName = process.env.COZE_PROJECT_NAME || process.env.EXPO_PUBLIC_COZE_PROJECT_NAME || '应用';
+const appName = '五子棋';
 const projectId = process.env.COZE_PROJECT_ID || process.env.EXPO_PUBLIC_COZE_PROJECT_ID;
-const slugAppName = projectId ? `app${projectId}` : 'myapp';
+const slugAppName = 'gobang';
 
 export default ({ config }: ConfigContext): ExpoConfig => {
   return {
@@ -11,19 +11,20 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     "slug": slugAppName,
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
+    "icon": "./assets/images/gobang-icon.png",
+    "scheme": "gobang",
+    "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gobang.app"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/gobang-icon.png",
+        "backgroundColor": "#DEB887"
       },
-      "package": `com.anonymous.x${projectId || '0'}`
+      "package": "com.gobang.app"
     },
     "web": {
       "bundler": "metro",
