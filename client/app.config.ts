@@ -31,6 +31,11 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       "output": "single",
       "favicon": "./assets/images/favicon.png"
     },
+    "extra": {
+      "eas": {
+        "projectId": "07e79e3c-eaa7-440c-ac6d-ea67c57adf2c"
+      }
+    },
     "plugins": [
       "expo-build-properties",
       process.env.EXPO_PUBLIC_BACKEND_BASE_URL
