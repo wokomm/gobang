@@ -7,86 +7,38 @@ const slugAppName = 'gobang';
 export default ({ config }: ConfigContext): ExpoConfig => {
   return {
     ...config,
-    "name": appName,
-    "slug": slugAppName,
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/gobang-icon.png",
-    "scheme": "gobang",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.gobang.app"
+    name: appName,
+    slug: slugAppName,
+    version: '1.0.0',
+    orientation: 'portrait',
+    icon: './assets/images/gobang-icon.png',
+    scheme: 'gobang',
+    userInterfaceStyle: 'light',
+    newArchEnabled: true,
+    ios: {
+      supportsTablet: true,
+      bundleIdentifier: 'com.gobang.app',
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/gobang-icon.png",
-        "backgroundColor": "#DEB887"
+    android: {
+      adaptiveIcon: {
+        foregroundImage: './assets/images/gobang-icon.png',
+        backgroundColor: '#DEB887',
       },
-      "package": "com.gobang.app"
+      package: 'com.gobang.app',
     },
-    "web": {
-      "bundler": "metro",
-      "output": "single",
-      "favicon": "./assets/images/favicon.png"
+    web: {
+      bundler: 'metro',
+      output: 'single',
+      favicon: './assets/images/favicon.png',
     },
-    "extra": {
-      "eas": {
-        "projectId": "07e79e3c-eaa7-440c-ac6d-ea67c57adf2c"
-      }
+    extra: {
+      eas: {
+        projectId: '07e79e3c-eaa7-440c-ac6d-ea67c57adf2c',
+      },
     },
-    "plugins": [
-      "expo-build-properties",
-      process.env.EXPO_PUBLIC_BACKEND_BASE_URL
-        ? [
-            "expo-router",
-            {
-              origin: process.env.EXPO_PUBLIC_BACKEND_BASE_URL,
-            },
-          ]
-        : "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          image: "./assets/images/splash-icon.png",
-          imageWidth: 200,
-          resizeMode: "contain",
-          backgroundColor: "#ffffff",
-        },
-      ],
-      [
-        "react-native-google-mobile-ads",
-        {
-          androidAppId: "ca-app-pub-8002671617647603~9557169270",
-          iosAppId: "ca-app-pub-8002671617647603~9557169270",
-        },
-      ],
-      [
-        "expo-image-picker",
-        {
-          photosPermission: "允许五子棋App访问您的相册，以便您上传或保存图片。",
-          cameraPermission: "允许五子棋App使用您的相机，以便您直接拍摄照片上传。",
-          microphonePermission: "允许五子棋App访问您的麦克风，以便您拍摄带有声音的视频。",
-        },
-      ],
-      [
-        "expo-location",
-        {
-          locationWhenInUsePermission: "五子棋App需要访问您的位置以提供周边服务及导航功能。",
-        },
-      ],
-      [
-        "expo-camera",
-        {
-          cameraPermission: "五子棋App需要访问相机以拍摄照片和视频。",
-          microphonePermission: "五子棋App需要访问麦克风以录制视频声音。",
-          recordAudioAndroid: true,
-        },
-      ],
-    ],
-    "experiments": {
-      "typedRoutes": true
-    }
-  }
-}
+    plugins: ['expo-build-properties'],
+    experiments: {
+      typedRoutes: true,
+    },
+  };
+};
