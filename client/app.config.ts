@@ -32,43 +32,53 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      process.env.EXPO_PUBLIC_BACKEND_BASE_URL ? [
-        "expo-router",
-        {
-          "origin": process.env.EXPO_PUBLIC_BACKEND_BASE_URL
-        }
-      ] : 'expo-router',
+      "expo-build-properties",
+      process.env.EXPO_PUBLIC_BACKEND_BASE_URL
+        ? [
+            "expo-router",
+            {
+              origin: process.env.EXPO_PUBLIC_BACKEND_BASE_URL,
+            },
+          ]
+        : "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        }
+          image: "./assets/images/splash-icon.png",
+          imageWidth: 200,
+          resizeMode: "contain",
+          backgroundColor: "#ffffff",
+        },
+      ],
+      [
+        "react-native-google-mobile-ads",
+        {
+          androidAppId: "ca-app-pub-XXXXXXXX~XXXXXXXX",
+          iosAppId: "ca-app-pub-XXXXXXXX~XXXXXXXX",
+        },
       ],
       [
         "expo-image-picker",
         {
-          "photosPermission": `允许五子棋App访问您的相册，以便您上传或保存图片。`,
-          "cameraPermission": `允许五子棋App使用您的相机，以便您直接拍摄照片上传。`,
-          "microphonePermission": `允许五子棋App访问您的麦克风，以便您拍摄带有声音的视频。`
-        }
+          photosPermission: "允许五子棋App访问您的相册，以便您上传或保存图片。",
+          cameraPermission: "允许五子棋App使用您的相机，以便您直接拍摄照片上传。",
+          microphonePermission: "允许五子棋App访问您的麦克风，以便您拍摄带有声音的视频。",
+        },
       ],
       [
         "expo-location",
         {
-          "locationWhenInUsePermission": `五子棋App需要访问您的位置以提供周边服务及导航功能。`
-        }
+          locationWhenInUsePermission: "五子棋App需要访问您的位置以提供周边服务及导航功能。",
+        },
       ],
       [
         "expo-camera",
         {
-          "cameraPermission": `五子棋App需要访问相机以拍摄照片和视频。`,
-          "microphonePermission": `五子棋App需要访问麦克风以录制视频声音。`,
-          "recordAudioAndroid": true
-        }
-      ]
+          cameraPermission: "五子棋App需要访问相机以拍摄照片和视频。",
+          microphonePermission: "五子棋App需要访问麦克风以录制视频声音。",
+          recordAudioAndroid: true,
+        },
+      ],
     ],
     "experiments": {
       "typedRoutes": true
