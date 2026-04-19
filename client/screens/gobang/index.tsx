@@ -1,14 +1,14 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Alert } from 'react-native';
 import { Screen } from '@/components/Screen';
-import { RewardedAd, RewardedAdEventType, AdEventType, TestIds } from 'react-native-google-mobile-ads';
+import { RewardedAd, RewardedAdEventType, AdEventType } from 'react-native-google-mobile-ads';
 
 const BOARD_SIZE = 15;
 const CELL_SIZE = Math.min((Dimensions.get('window').width - 40) / BOARD_SIZE, 28);
 const PIECE_SIZE = CELL_SIZE * 0.85;
 
-// 测试广告单元 ID（需要替换为你自己的真实 ID）
-const REWARDED_AD_UNIT_ID = TestIds.REWARDED;
+// 激励广告单元 ID
+const REWARDED_AD_UNIT_ID = 'ca-app-pub-8002671617647603/3503942994';
 
 type Player = 'black' | 'white' | null;
 type Board = Player[][];
