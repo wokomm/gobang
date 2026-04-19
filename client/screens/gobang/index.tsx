@@ -7,8 +7,8 @@ const BOARD_SIZE = 15;
 const CELL_SIZE = Math.min((Dimensions.get('window').width - 40) / BOARD_SIZE, 28);
 const PIECE_SIZE = CELL_SIZE * 0.85;
 
-// 激励广告单元 ID
-const REWARDED_AD_UNIT_ID = 'ca-app-pub-8002671617647603/3503942994';
+// 测试广告单元 ID
+const REWARDED_AD_UNIT_ID = 'ca-app-pub-3940256099942544/5224359117';
 
 type Player = 'black' | 'white' | null;
 type Board = Player[][];
